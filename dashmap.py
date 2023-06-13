@@ -20,7 +20,7 @@ def main():
 
     # Display map
     st.subheader('Map')
-    st.map(geodata)
+    st.map(geodata, zoom=2, tooltip='Prime Name')
 
     # Display individual variables
     st.subheader('Individual Variables')
