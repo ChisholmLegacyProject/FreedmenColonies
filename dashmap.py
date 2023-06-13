@@ -2,7 +2,7 @@
 
 # Commented out IPython magic to ensure Python compatibility.
 
-!pip install streamlit pandas geopandas
+!pip install streamlit
 !pip install pandas
 !pip install geopandas
 
