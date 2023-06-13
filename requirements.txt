@@ -2,4 +2,4 @@ streamlit
 pandas
 geopandas
 requests
-folium
+
