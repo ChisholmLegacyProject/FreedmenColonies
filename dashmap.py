@@ -1,12 +1,4 @@
-
-
-# Commented out IPython magic to ensure Python compatibility.
-
-!pip install streamlit
-!pip install pandas
-!pip install geopandas
-
-
+#import libs
 import streamlit as st
 import pandas as pd
 import geopandas as gpd
