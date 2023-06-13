@@ -2,12 +2,12 @@ import streamlit as st
 import pandas as pd
 import geopandas as gpd
 import requests
-import folium
-from streamlit_folium import folium_static
 
-url = 'https://raw.githubusercontent.com/ChisholmLegacyProject/FreedmenColonies/main/FC.geojson'
+
+url = 'https://raw.githubusercontent.com/<username>/<repo>/path/to/your/geojson/file.geojson'
 response = requests.get(url)
 data = response.json()
+
 
 def main():
     # Load GeoJSON data into a GeoDataFrame
@@ -22,52 +22,7 @@ def main():
 
     # Display map
     st.subheader('Map')
-    folium_map = folium.Map(location=[0, 0], zoom_start=2)
-
-    for feature in data['features']:
-        properties = feature['properties']
-        name = properties['name']
-        total_population = properties['total_popu']
-        male_population = properties['male_popul']
-        female_population = properties['female_pop']
-        black_population = properties['black']
-        latino_population = properties['latino']
-        poverty = properties['poverty']
-        prime_name = properties['Prime_name']
-        other_name = properties['Other_name']
-        risk_score = properties['RISK_SCORE']
-        sovi_score = properties['SOVI_SCORE']
-
-        popup_text = f'''
-            Name: {name}<br>
-            Total Population: {total_population}<br>
-            Male Population: {male_population}<br>
-            Female Population: {female_population}<br>
-            Black Population: {black_population}<br>
-            Latino Population: {latino_population}<br>
-            Poverty: {poverty}<br>
-            Prime Name: {prime_name}<br>
-            Other Name: {other_name}<br>
-            Risk Score: {risk_score}<br>
-            SOVI Score: {sovi_score}
-        '''
-
-        folium.Marker(
-            location=(feature['geometry']['coordinates'][1], feature['geometry']['coordinates'][0]),
-            popup=folium.Popup(popup_text, max_width=250),
-            icon=folium.Icon(icon='info-sign')
-        ).add_to(folium_map)
-
-        folium.Marker(
-            location=(feature['geometry']['coordinates'][1], feature['geometry']['coordinates'][0]),
-            icon=folium.DivIcon(
-                html=f'<div style="font-weight: bold; text-align: center;">{prime_name}</div>',
-                icon_size=(100, 20),
-                icon_anchor=(50, 0)
-            )
-        ).add_to(folium_map)
-
-    folium_static(folium_map)
+    st.map(geodata)
 
     # Display individual variables
     st.subheader('Individual Variables')
