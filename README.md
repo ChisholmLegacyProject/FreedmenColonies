@@ -85,3 +85,91 @@ Below is a step-by-step explanation of the code:
        census_row = {
            "name": name,
            "total_population
+
+          
+          Sure! Here's a GitHub README documentation for the code you provided:
+
+```markdown
+# Streamlit Interactive Dashboard and Map
+
+This is a Streamlit application that displays an interactive dashboard and map based on GeoJSON data.
+
+## Getting Started
+
+To run this application locally, follow the steps below:
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/your-username/your-repo.git
+```
+
+2. Install the required dependencies:
+
+```bash
+pip install streamlit pandas geopandas requests
+```
+
+3. Run the Streamlit application:
+
+```bash
+streamlit run app.py
+```
+
+4. Access the application in your web browser at `http://localhost:8501`.
+
+## Usage
+
+Once you have the application running, you can explore the following features:
+
+### GeoJSON Data
+
+The GeoJSON data is displayed as a GeoDataFrame. It shows the geographic features and associated properties.
+
+### Map
+
+The map visualizes the GeoJSON data on an interactive map. You can zoom in and out to explore the data.
+
+### Individual Variables
+
+The individual variables are displayed for each feature in the GeoJSON data. The variables include:
+
+- Name
+- Total Population
+- Male Population
+- Female Population
+- Black Population
+- Latino Population
+- Poverty
+- Prime Name
+- Other Name
+- Risk Score
+- SOVI Score
+
+## Data Source
+
+The GeoJSON data used in this application is obtained from the following URL:
+
+- [FreedmenColonies GeoJSON](https://raw.githubusercontent.com/ChisholmLegacyProject/FreedmenColonies/main/FC.geojson)
+
+Please make sure you have a stable internet connection to access the data.
+
+## Dependencies
+
+- streamlit
+- pandas
+- geopandas
+- requests
+
+You can install the required dependencies using the following command:
+
+```bash
+pip install -r requirements.txt
+```
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+```
+
+Feel free to modify the content based on your specific needs.
