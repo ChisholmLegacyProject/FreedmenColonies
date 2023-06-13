@@ -3,6 +3,7 @@ import pandas as pd
 import geopandas as gpd
 import requests
 import folium
+from streamlit_folium import folium_static
 
 url = 'https://raw.githubusercontent.com/ChisholmLegacyProject/FreedmenColonies/main/FC.geojson'
 response = requests.get(url)
@@ -21,7 +22,7 @@ def main():
 
     # Display map
     st.subheader('Map')
-    folium_map = folium.Map(location=[0, 0], zoom_start=2)
+    m = folium.Map(location=[0, 0], zoom_start=2)
 
     for feature in data['features']:
         properties = feature['properties']
@@ -55,9 +56,9 @@ def main():
             location=(feature['geometry']['coordinates'][1], feature['geometry']['coordinates'][0]),
             popup=popup_text,
             icon=folium.Icon(icon='info-sign')
-        ).add_to(folium_map)
+        ).add_to(m)
 
-    folium_static(folium_map)
+    folium_static(m)
 
     # Display individual variables
     st.subheader('Individual Variables')
@@ -72,18 +73,3 @@ def main():
         poverty = properties['poverty']
         prime_name = properties['Prime_name']
         other_name = properties['Other_name']
-        risk_score = properties['RISK_SCORE']
-        sovi_score = properties['SOVI_SCORE']
-
-        st.write(f'Name: {name}')
-        st.write(f'Total Population: {total_population}')
-        st.write(f'Male Population: {male_population}')
-        st.write(f'Female Population: {female_population}')
-        st.write(f'Black Population: {black_population}')
-        st.write(f'Latino Population: {latino_population}')
-        st.write(f'Poverty: {poverty}')
-        st.write(f'Prime Name: {prime_name}')
-        st.write(f'Other Name: {other_name}')
-        st.write(f'Risk Score: {risk_score}')
-        st.write(f'SOVI Score: {sovi_score}')
-        st.write
