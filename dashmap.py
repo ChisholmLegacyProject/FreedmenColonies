@@ -1,8 +1,11 @@
 
 
 # Commented out IPython magic to ensure Python compatibility.
-# %pip install streamlit geopandas folium
+
 !pip install streamlit pandas geopandas
+!pip install pandas
+!pip install geopandas
+
 
 import streamlit as st
 import pandas as pd
