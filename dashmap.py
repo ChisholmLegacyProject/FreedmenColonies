@@ -2,8 +2,6 @@ import streamlit as st
 import pandas as pd
 import geopandas as gpd
 import requests
-import folium
-from streamlit_folium import folium_static
 
 url = 'https://raw.githubusercontent.com/ChisholmLegacyProject/FreedmenColonies/main/FC.geojson'
 response = requests.get(url)
