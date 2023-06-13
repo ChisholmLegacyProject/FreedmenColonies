@@ -2,9 +2,7 @@
 
 # Commented out IPython magic to ensure Python compatibility.
 # %pip install streamlit geopandas folium
-
-# Commented out IPython magic to ensure Python compatibility.
-# %pip install plotly
+!pip install streamlit pandas geopandas
 
 import streamlit as st
 import pandas as pd
