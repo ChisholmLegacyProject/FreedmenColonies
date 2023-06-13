@@ -4,7 +4,7 @@ import geopandas as gpd
 import requests
 
 
-url = 'https://raw.githubusercontent.com/<username>/<repo>/path/to/your/geojson/file.geojson'
+url = 'https://raw.githubusercontent.com/ChisholmLegacyProject/FreedmenColonies/main/FC.geojson'
 response = requests.get(url)
 data = response.json()
 
